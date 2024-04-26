@@ -1,0 +1,5 @@
+ErrorDocument 404 /SAE_203/biblio_bouaziz2/404.html
+
+Options -Indexes
+
+ErrorDocument 403 /SAE_203/biblio_bouaziz2/403.html

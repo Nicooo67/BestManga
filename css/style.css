@@ -1,0 +1,603 @@
+/*Base.twig*/
+
+body {
+	font-size: 1.1em;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #d8d8d8;
+	width: 900px;
+	margin: auto;
+}
+
+.titre-header {
+	display: flex;
+	margin: auto;
+}
+
+header {
+	display: flex;
+	background-color: white;
+	border: 2px solid rgb(170, 170, 170);
+	justify-content: space-between;
+	height: 90px;
+}
+
+header a {
+	margin: 10px;
+}
+
+header h1 {
+	padding: 0;
+	margin: 0;
+}
+
+header img {
+	width: 60px;
+	height: 50px;
+	margin: 0 10px 0 0;
+}
+
+.menu {
+	display: flex;
+}
+
+.menu li {
+	margin-top: -18px;
+	width: 150px;
+	height: 91px;
+	font-size: 1.3rem;
+	font-weight: 700;
+	position: relative;
+	color: rgb(0, 0, 0);
+	z-index: 0;
+	border-left: 2px solid rgb(170, 170, 170);
+	;
+	background: rgb(255, 255, 255);
+	overflow: hidden;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu li::before {
+	content: '';
+	position: absolute;
+	top: 90px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(224, 251, 252);
+	border-radius: 50% 50% 0% 0%;
+	z-index: -1;
+	transition: all .5s;
+}
+
+.menu li:hover::before {
+	top: 0px;
+	border-radius: 0;
+}
+
+.menu li:hover a {
+	font-size: 1.5rem;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: black;
+	width: 150px;
+	height: 91px;
+	text-align: center;
+	line-height: 90px;
+	transition: all 0.5s;
+}
+
+main {
+	background-color: white;
+	margin-top: 0;
+	
+}
+
+.button {
+	display: block;
+	margin: auto;
+	border: solid black 2px;
+	border-radius: 10px;
+	color: #000000;
+	background: #ffffff;
+	font-weight: bold;
+	width: 150px;
+	cursor: pointer;
+	font-size: 15px;
+	z-index: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 150px;
+	width: 100%;
+	height: 130%;
+	background: rgb(224, 251, 252);
+	border-radius: 0% 50% 50% 0%;
+	z-index: -1;
+	transition: all .9s;
+}
+
+.button:hover::before {
+	left: 0px;
+	border-radius: 0;
+
+}
+
+.input {
+	padding: 10px 10px;
+	width: 150px;
+	text-align: center;
+	border: none;
+	background: none;
+}
+
+
+.reseaux {
+	display: flex;
+	text-align: center;
+	margin-left: 200px;
+}
+
+.reseaux>div {
+	padding-left: 100px;
+}
+
+.reseaux a{
+	text-decoration: none;
+	color: black;
+}
+
+footer {
+	text-align: center;
+	width: 900px;
+	background-color: white;
+	border: 1px solid gray;
+}
+
+.cgu {
+	font-size: 10px;
+}
+
+/*Aside.twig*/
+
+.base {
+	display: inline-block;
+
+}
+
+.base>div {
+	position: sticky;
+	top: 0px;
+}
+
+
+aside {
+	width: 200px;
+	background-color: #eeeeee;
+	margin-left: 35px;
+	height: 510px;
+	border-radius: 10px;
+	border: 1px solid gray;
+	box-shadow: 3px 3px 3px gray;
+	margin-bottom: 10px;
+}
+
+aside h3 {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+aside ul {
+	margin-left: 0;
+}
+
+aside li {
+	list-style: none;
+	font-size: 13px;
+}
+
+.list-grid {
+	display: flex;
+	margin: 10px 0 0 190px;
+}
+
+.list-grid h3 {
+	margin-top: 2px;
+	margin-left: 20px;
+}
+
+.list-grid div {
+	display: flex;
+}
+
+.list-grid a {
+	color: black;
+	font-size: 25px;
+}
+
+/*Accueil.twig */
+
+.container {
+	width: 500px;
+	display: grid;
+	margin-right: 10px;
+}
+
+.grille {
+	display: grid;
+	grid-template-columns: 200px 200px 200px;
+	width: 500px;
+	margin-left: 10px;
+}
+
+.liste {
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.grille p {
+	width: 100%;
+	justify-content: center;
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	font-size: 15px;
+
+}
+
+.grille a {
+	padding: 9px 9px 3px;
+	margin: 5px;
+	width: 150px;
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+.liste a {
+	padding: 2px;
+	margin: 5px;
+	display: flex;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+
+}
+
+.liste p {
+	padding: 2px;
+	margin: 5px;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.grille .manga-accueil {
+	margin: 10px 20px 25px 15px;
+	background-color: rgb(224, 111, 111);
+	border-radius: 10px;
+
+	box-shadow: 4px 4px 1px rgb(0, 0, 0);
+	width: 180px;
+	height: 380px;
+	position: relative;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1);
+	transition: all 200ms ease-in;
+	transform: scale(1);
+}
+
+.grille .manga-accueil:hover {
+	z-index: 2;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1.05);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1.05);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1.05);
+	transition: all 200ms ease-in;
+	transform: scale(1.05);
+}
+
+.grille .manga-accueil img {
+	width: 150px;
+	height: 250px;
+	background-size: 100%;
+
+}
+
+.grille .manga-accueil .titre-a {
+	font-weight: bold;
+	text-align: center;
+
+}
+
+.liste .manga-accueil {
+	margin-left: 20px;
+	margin-bottom: 25px;
+	display: flex;
+	background-color: rgb(224, 111, 111);
+	border-radius: 10px;
+	padding: 10px;
+	width: 500px;
+	box-shadow: 5px 5px 1px rgb(0, 0, 0);
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1);
+	transition: all 200ms ease-in;
+	transform: scale(1);
+}
+
+.liste .manga-accueil:hover {
+	z-index: 2;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1.05);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1.05);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1.05);
+	transition: all 200ms ease-in;
+	transform: scale(1.05);
+}
+
+.liste .manga-accueil img {
+	width: 200px;
+	height: 280px;
+	background-size: 100%;
+	margin-right: 10px;
+}
+
+.liste .manga-accueil .text {
+	align-items: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	padding-top: 40px;
+	width: 290px;
+}
+
+.liste .manga-accueil .titre-a {
+	text-align: center;
+}
+
+/* filtres.twig */
+
+.catalogue {
+	margin: 0 0 40px 70px;
+	padding-top: 40px;
+	font-size: 40px;
+}
+
+.flex {
+	display: flex;
+	margin: auto;
+}
+
+.info {
+	margin-top: 80px;
+	margin-left: 20px;
+}
+
+
+
+/* manga.twig */
+
+.container_m {
+	margin: 50px 0 40px 50px;
+	width: 800px;
+}
+
+.resume span {
+	font-weight: bold;
+}
+
+.formulaire {
+	display: inline-block;
+}
+
+.votre {
+	font-size: 30px;
+	width: 300px;
+	margin-top: 50px;
+}
+
+hr {
+	width: 800px;
+	margin-right: 1000px;
+}
+
+.container_m img {
+	width: 260px;
+	height: 360px;
+	background-size: 100%;
+
+}
+
+.resume {
+	width: 800px;
+	text-align: justify;
+	margin-bottom: 50px;
+}
+
+.manga_details {
+	margin: 10px 0 0 20px;
+	width: 600px;
+}
+
+.manga_details .titre {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.manga_details span {
+	font-weight: bold;
+	color: gray;
+
+}
+
+.manga_info {
+	display: flex;
+}
+
+.manga_info img {
+	box-shadow: 5px 5px 5px gray;
+}
+
+.liste_bouton {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+	text-decoration: none;
+	color: black;
+	margin: 20px 10px 10px 0;
+	box-shadow: 1px 1px 5px black;
+}
+
+.similaire {
+	display: flex;
+	justify-content: space-around;
+	width: 800px;
+	margin-bottom: 50px;
+}
+
+.similaire a {
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.similaire img {
+	width: 160px;
+	height: 260px;
+	background-size: 100%;
+	margin-top: 35px;
+}
+
+.similaire-manga {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px;
+	background-color: rgb(224, 111, 111);
+	border-radius: 10px;
+
+	box-shadow: 4px 4px 1px rgb(0, 0, 0);
+	width: 200px;
+	height: 370px;
+	position: relative;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1);
+	transition: all 200ms ease-in;
+	transform: scale(1);
+}
+
+.similaire-manga:hover {
+	z-index: 2;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(105);
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1.05);
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1.05);
+	transition: all 200ms ease-in;
+	transform: scale(1.05);
+}
+
+
+.titresimi {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+.avi {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.avi h3{
+	font-size: 30px;
+}
+.formulaire p  {
+	margin-bottom: 30px;
+}
+
+.avis-id {
+	background-color: rgb(224, 251, 252);
+	border: 1px solid gray;
+	width: 500px;
+	margin-bottom: 40px;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 4px 4px 1px rgb(0, 0, 0);
+}
+
+.avis-id p {
+	padding: 10px;
+}
+
+/* liste_avis.twig */
+
+.container_a {
+	display: grid;
+	grid-template-columns: 280px 280px 280px;
+	margin: 10px 20px 10px 30px;
+}
+
+.avis {
+	border: 1px solid black;
+	margin: 10px 20px 10px 20px;
+	padding: 10px;
+	background-color: rgb(224, 251, 252);
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 4px 4px 1px rgb(0, 0, 0);
+}
+
+.avis span {
+	font-weight: bold;
+}
+
+.avis a {
+	text-decoration: none;
+	color: red;
+}
+
+.votre-c {
+	font-size: 30px;
+	width: 400px;
+	margin-left: 65px;
+}
+
+.reseaux i {
+	padding: 10px;
+}

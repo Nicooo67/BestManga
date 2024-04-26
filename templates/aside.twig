@@ -1,0 +1,43 @@
+{% extends 'base.twig' %}
+{% block aside %}
+<div class="base">
+    <div>
+        <div class="list-grid">
+            <a href="index.php?aff=liste"><i class="bi bi-card-list"></i></a>
+            <a href="index.php?aff=grille"><i class="bi bi-grid-3x3-gap-fill"></i></a>
+            <form action="index.php" method="POST">
+        </div>
+        <div class="aside">
+            <aside>
+                <ul>
+                    <h3>Genres</h3>
+                    {% for genre in genres %}
+                    <li><input type="radio" name="genres" value="{{ genre.genre_id }}">
+                        <label for="genres">{{ genre.genre_nom }} ({{genre.nombre}})</label></li>
+                    {% endfor %}
+                </ul>
+                <ul>
+                    <h3>Auteurs</h3>
+                    {% for auteur in auteurs %}
+                    <li><input type="radio" name="auteurs" value="{{ auteur.auteur_id }}">
+                        <label for="auteurs">{{ auteur.auteur_nom }} ({{auteur.nombre}})</label></li>
+                    {% endfor %}
+                </ul>
+                <ul>
+                    <h3>Editeurs</h3>
+                    {% for editeur in editeurs %}
+                    <li><input type="radio" name="editeurs" value="{{ editeur.manga_editeur }}">
+                        <label for="editeurs">{{ editeur.manga_editeur }} ({{editeur.nombre}})</label></li>
+                    {% endfor %}
+                </ul>
+                <div class="button">
+                    <input class="input" type="submit" value="Filtrer">
+                </div>
+                </form>
+            </aside>
+        </div>
+
+    </div>
+    
+</div>
+{% endblock %}

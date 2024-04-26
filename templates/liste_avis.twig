@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+
+{% block main %} {# Insértion dans la balise main #}
+<div>
+    <h3 class="votre-c">Tous les commentaires :</h3>
+    <div class="container_a">
+        {% for avi in avis  %}
+        <div class="avis">
+            <a href="delete.php?id={{avi.avis_id}}">X</a>
+            <p><span>Manga :</span> {{avi.manga_titre}}</p>
+            <p><span>Pseudo :</span> {{avi.pseudo_avis}}</p>
+            <p><span>Commentaire :</span> {{avi.commentaire_avis}}</p>
+            {% if avi.etoiles_avis == 0 %}
+            <p><span>Notes : </span></i><i class="bi bi-star"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i> <i class="bi bi-star"></i></p>
+            {% endif %}
+            {% if avi.etoiles_avis == 1 %}
+            <p><span>Notes : </span><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                    class="bi bi-star"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></p>
+            {% endif %}
+            {% if avi.etoiles_avis == 2 %}
+            <p><span>Notes :</span> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                    class="bi bi-star"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></p>
+            {% endif %}
+            {% if avi.etoiles_avis == 3 %}
+            <p><span>Notes :</span> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                    class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></p>
+            {% endif %}
+            {% if avi.etoiles_avis == 4 %}
+            <p><span>Notes :</span> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i></p>
+            {% endif %}
+            {% if avi.etoiles_avis == 5 %}
+            <p><span>Notes :</span> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}{# Fin de l'Insértion dans la balise main #}

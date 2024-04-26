@@ -1,0 +1,83 @@
+{% extends 'base.twig' %}
+
+{% block main %} {# Insértion dans la balise main #}
+<div class="container_m">
+    {% for manga in mangas  %} {# Boucle for pour tous les livres #}
+    <div class="manga_info">
+        <a href="manga.php?id={{ manga.manga_id }}"><img src="{{manga.manga_img}}" alt="manga"></a>
+        <div class="manga_details">
+            <p class="titre">{{manga.manga_titre}}</p>
+            <p><span>Début :</span> {{manga.manga_date}}</p>
+            <p><span>Auteur :</span> {{manga.auteur_nom}}</p>
+            <p><span>Editeur :</span> {{manga.manga_editeur}}</p>
+            <p><span>Statut :</span> {{manga.manga_statut}}</p>
+            <p><span>Origine :</span> {{manga.manga_origine}}</p>
+            <p><span>Nombre de tome :</span> {{manga.manga_nbr}}</p>
+        </div>
+    </div>
+    <div class="resume">
+        <p class="resume"><span>Resume : </span>{{manga.manga_resume}}</p>
+    </div>
+    {% endfor %}
+    <hr>
+    <h3 class="votre">Vous aimerez aussi :</h3>
+    <div class="similaire">
+        {% for manga in similaires %}
+        <div class="similaire-manga">
+            <a class="simimg" href="manga.php?id={{ manga.manga_id }}"><img src="{{manga.manga_img}}" alt="manga"></a>
+            <p class="titresimi">{{manga.manga_titre}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="avi">
+    <h3 >Votre Avis :</h3>
+    <div class="formulaire">
+        {% for manga in mangas %}
+        <form action="ajout_commentaire.php?id={{manga.manga_id}}" method="POST">
+            <p><label for="pseudo">Votre Pseudo : </label><input type="text" name="pseudo" required></p>
+            <p>
+                <label for="commentaire">Commentaire : </label><input type="text" name="commentaire" required></p>
+            <p>
+                <label for="etoiles">Note : </label><input type="number" max="5" min="1" name="etoiles" required></p>
+            <div class="button"><input class="input" type="submit"></div>
+            <input type="hidden" name="id" value="{{manga.manga_id}}">
+        </form>
+        {% endfor %}
+    </div>
+    </div>
+    <hr>
+    <h3 class="votre">Vos commentaires :</h3>
+    <div class="avis-all">
+        {% for avi in avis %}
+        <div class="avis-id">
+            <p>Pseudo : {{avi.pseudo_avis}}</p>
+            <p>Commentaire : {{avi.commentaire_avis}}</p>
+            {% if avi.etoiles_avis == 1 %}
+            <p>Notes : <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i> <i
+                    class="bi bi-star"></i> <i class="bi bi-star"></i></p>  
+            {% endif %}
+            {% if avi.etoiles_avis == 2 %}
+            <p>Notes : <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                    class="bi bi-star"></i> <i class="bi bi-star"></i></p> 
+            {% endif %}
+            {% if avi.etoiles_avis == 3 %}
+            <p>Notes : <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i> <i class="bi bi-star"></i></p> 
+            {% endif %}
+            {% if avi.etoiles_avis == 4 %}
+            <p>Notes : <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i></p> 
+            {% endif %}
+            {% if avi.etoiles_avis == 5 %}
+            <p>Notes : <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></p> 
+            {% endif %}
+        </div>
+        {% endfor %}
+        <a href="avis.php?id={{manga.manga_id}}" class="liste_bouton">Tous les commentaires</a>
+    </div>
+</div>
+
+
+{% endblock main %}{# Fin de l'Insértion dans la balise main #}

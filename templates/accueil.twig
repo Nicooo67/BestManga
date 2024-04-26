@@ -1,0 +1,20 @@
+{% extends 'aside.twig' %}
+
+{% block titre %} 
+		<h2 class="catalogue">Notre Catalogue :</h2>
+{% endblock %}
+{% block main %} {# Insértion dans la balise main #}
+
+<div class="container {{ affichage }}">
+    {% for manga in filtre  %} {# Boucle for pour tous les livres #}
+    <div class="manga-accueil">
+        <a href="manga.php?id={{ manga.manga_id }}"><img src="{{manga.manga_img}}" alt="manga">
+            <div class="text">
+            <h3 class="titre-a">{{manga.manga_titre}}</h3>
+            <p><span>Début :</span> {{manga.manga_date}}</p>
+        </div></a>
+        
+    </div>
+    {% endfor %} {# Fin de la boucle for pour les livres #}
+</div>
+{% endblock main %}{# Fin de l'Insértion dans la balise main #}

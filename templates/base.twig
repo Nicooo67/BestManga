@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Biblio</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+	<header>
+		<div class="titre-header"><img src="./images/logomanga.png" alt="manga">
+			<h1>BestManga</h1>
+		</div>
+		<nav>
+
+			<ul class="menu">
+				<li><a href="avis.php"><i class="bi bi-chat-dots"></i></i> Avis</a></li>
+				<li><a href="index.php"><i class="bi bi-house-door"></i> Accueil</a></li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<main>
+		{% block titre %}
+		{% endblock %}
+
+		<div class="flex">
+			{% block aside %}
+			{% endblock %}
+
+			{% block main %}
+			{% endblock %}
+	</main>
+	<footer>
+		<div class="reseaux">
+			<div>
+				<h4>Nos reseaux</h4>
+				<p><i class="bi bi-instagram"></i> <i class="bi bi-twitter"></i> <i class="bi bi-facebook"></i></p>
+			</div>
+			<div>
+				<h4>Plan du site</h4>
+				<div>
+					<a href="">Accueil</a>
+					<a href="">Avis</a>
+				</div>
+			</div>
+		</div>
+		<div class="cgu">
+			<h4>Conditions générales</h4>
+			<p>© Copyright 2022, KLEIN Nicolas. All rights reserved.</p>
+		</div>
+	</footer>
+</body>
+
+</html>
